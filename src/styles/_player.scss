@@ -6,25 +6,61 @@
   justify-content: space-between;
 }
 
+// Song duration slider
 .time-control {
   width: 50%;
   display: flex;
+  align-items: center;
   input {
     width: 100%;
-    padding: 1rem 0rem;
+    -webkit-appearance: none; // Remove song duration styling
+    background: transparent;
+    cursor: pointer;
   }
   p {
     padding: 1rem; // Left right bottom top padding
   }
 }
 
+// Play and skip buttons
 .play-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  width: 30%;
+  width: 35%;
   svg {
     cursor: pointer;
   }
+}
+
+// Remove outline of the song duration slider
+input[type='range']:focus {
+  outline: none;
+}
+// Song duration THUMB styling
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+}
+
+.track {
+  background: lightskyblue;
+  width: 100%;
+  height: 1rem;
+  position: relative; // Set relative so anime-track background/position overlays track
+  border-radius: 1rem;
+  overflow: hidden; // To make right side radius visible
+}
+
+.animate-track {
+  background: rgb(204, 204, 204);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  pointer-events: none; // Allows you to click and drag thumb even if anime-track background overlaying
 }
