@@ -19,7 +19,6 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
 
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
-    //setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
 
   const playSongHandler = async () => {
@@ -31,12 +30,6 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
       setSongPlaying(!songPlaying);
     }
   };
-
-  // const autoPlayHandler = () => {
-  //   if (songPlaying) {
-  //     audioRef.current.play();
-  //   }
-  // };
 
   const nextSong = () => {
     const currentSongIndex = songs.findIndex((s) => s.id === currentSong.id);
