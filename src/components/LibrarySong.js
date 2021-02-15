@@ -3,8 +3,6 @@ import React from 'react';
 const LibrarySong = ({ song, songs, setCurrentSong, setSongs }) => {
   const songSelectHandler = () => {
     const selectedSong = songs.filter((state) => {
-      console.log(state);
-      console.log(song.id);
       return state.id === song.id;
     });
     setCurrentSong(selectedSong[0]);
