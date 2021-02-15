@@ -1,5 +1,5 @@
 .player {
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,10 +28,37 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  width: 35%;
+  width: 40%;
   svg {
     cursor: pointer;
   }
+}
+
+.volume-container {
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.volume-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 40%;
+  padding-top: 1rem;
+  input {
+    -webkit-appearance: none; // Remove song duration styling
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+  }
+}
+
+.volume-btn {
+  padding: 1rem;
+  cursor: pointer;
 }
 
 // Remove outline of the song duration slider
@@ -44,6 +71,12 @@ input[type='range']::-webkit-slider-thumb {
   height: 16px;
   width: 16px;
 }
+// Fix for Firefox
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+}
 
 .track {
   background: lightskyblue;
@@ -54,7 +87,8 @@ input[type='range']::-webkit-slider-thumb {
   overflow: hidden; // To make right side radius visible
 }
 
-.animate-track {
+.animate-track,
+.animate-volume {
   background: rgb(204, 204, 204);
   width: 100%;
   height: 100%;

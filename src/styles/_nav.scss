@@ -8,12 +8,16 @@ nav {
     border: none;
     cursor: pointer;
     border: 2px solid rgb(65, 65, 65);
+    border-radius: 5%;
     padding: 0.5rem;
     transition: all 0.3s ease;
     &:hover {
       background: rgb(65, 65, 65);
       color: white;
     }
+  }
+  .lib-icon {
+    padding-left: 2px;
   }
 }
 
