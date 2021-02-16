@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const LibrarySong = ({ song, songs, setCurrentSong, setSongs }) => {
   const songSelectHandler = () => {

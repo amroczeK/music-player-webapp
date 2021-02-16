@@ -108,7 +108,6 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
   };
 
   useEffect(() => {
-    console.log('setting songs');
     setSongs(
       songs.map((targetSong) => {
         return {
@@ -117,7 +116,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
         };
       })
     );
-  }, []);
+  }, [currentSong]);
 
   // Styles
   const animateTrack = {
