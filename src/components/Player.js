@@ -102,12 +102,13 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
       });
       if (!shuffleSongs) nextSong();
     }
-    if (e.target.ended && shuffleSongs) {
+    if (songPlaying && shuffleSongs && e.target.ended) {
       setCurrentSong(songs[Math.floor(Math.random() * Math.floor(songs.length))]);
     }
   };
 
   useEffect(() => {
+    console.log('setting songs');
     setSongs(
       songs.map((targetSong) => {
         return {
@@ -116,7 +117,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
         };
       })
     );
-  }, [currentSong]);
+  }, []);
 
   // Styles
   const animateTrack = {
@@ -152,7 +153,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
             title={!shuffleSongs ? 'Enable shuffle' : 'Disable shuffle'}
             size='1x'
             icon={faRandom}
-            color={shuffleSongs ? 'grey' : ''}
+            color={shuffleSongs ? '#007CC7' : '#4DA8DA'}
             onClick={() => {
               if (loopSong) setLoopSong(false);
               setShuffleSongs(!shuffleSongs);
@@ -160,6 +161,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
           />
           <FontAwesomeIcon
             title='Previous'
+            color={'#4DA8DA'}
             className='skip-back'
             size='2x'
             icon={faAngleLeft}
@@ -167,6 +169,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
           />
           <FontAwesomeIcon
             title='Play'
+            color={'#4DA8DA'}
             onClick={playSongHandler}
             className='play'
             size='2x'
@@ -174,6 +177,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
           />
           <FontAwesomeIcon
             title='Next'
+            color={'#4DA8DA'}
             className='skip-forward'
             size='2x'
             icon={faAngleRight}
@@ -184,7 +188,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
             className='repeat'
             size='1x'
             icon={faSyncAlt}
-            color={loopSong ? 'grey' : ''}
+            color={loopSong ? '#007CC7' : '#4DA8DA'}
             loop={loopSong}
             onClick={() => {
               if (shuffleSongs) setShuffleSongs(false);
@@ -212,6 +216,7 @@ const Player = ({ songs, setSongs, currentSong, setCurrentSong }) => {
               loop={loopSong}
               onClick={() => {
                 setMuted(!muted);
+                volumeHandler(0.1);
               }}
             />
           </div>

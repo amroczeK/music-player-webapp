@@ -4,8 +4,8 @@
   left: 0;
   width: 20rem;
   height: 100%;
-  background: white;
-  box-shadow: 2px 2px 50px rgb(204, 204, 204);
+  background: linear-gradient(to right,  #007CC7 , #4DA8DA);
+  box-shadow: 2px 2px 50px #203647;
   overflow-y: scroll;
   // Transition the library list
   transform: translateX(-100%);
@@ -26,7 +26,7 @@
     width: 30%;
   }
   &:hover {
-    background: lightblue;
+    background: #4da8da;
   }
 }
 
@@ -43,13 +43,13 @@
 // This enables custom scrollbar in Firefox
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+  scrollbar-color: #4da8da transparent;
 }
 
 // This enables custom scrollbar in Chrome
 *::-webkit-scrollbar {
   width: 5px;
-  background: rgba(155, 155, 155, 0.5);
+  background: #007CC7;
 }
 
 *::-webkit-scrollbar-track {
@@ -57,13 +57,13 @@
 }
 
 *::-webkit-thumb {
-  background-color: rgba(155, 155, 155, 0.5);
+  background-color: #007CC7;
   border-radius: 20px;
   border: transparent;
 }
 
 .selected {
-  background: lightskyblue;
+  background: #007CC7;
 }
 
 .active-library {

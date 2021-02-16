@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const LibrarySong = ({ song, songs, setCurrentSong, setSongs }) => {
   const songSelectHandler = () => {
-    const selectedSong = songs.filter((state) => {
-      return state.id === song.id;
-    });
-    setCurrentSong(selectedSong[0]);
+    const selectedSong = songs.filter((state) => state.id === song.id);
+    setCurrentSong({ ...selectedSong[0] });
     setSongs(
       songs.map((targetSong) => {
         return {
