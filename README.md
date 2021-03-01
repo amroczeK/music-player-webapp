@@ -1,4 +1,4 @@
-## About
+## Music Player Web App
 
 Simple and stylish music player webapp with Chillhop library.
 
