@@ -1,6 +1,6 @@
-# Music Player Web Application
+# Music Player Web App
 
-Developed in ReactJS.
+Simple and stylish music player webapp with Chillhop library, developed with ReactJS.
 
 ![Alt text](./preview.PNG?raw=true 'Preview')
 
